@@ -25,7 +25,7 @@ public class PostgresAccountRepository implements AccountRepository {
         try {
             return template.queryForObject("SELECT * FROM account WHERE name=?", new AccountEntityRowMapper(), accountName);
 
-        } catch (EmptyResultDataAccessException e){
+        } catch (EmptyResultDataAccessException e) {
             return null;
         }
     }
@@ -34,6 +34,12 @@ public class PostgresAccountRepository implements AccountRepository {
     public void addAccount(AccountEntity account) {
         template.update("INSERT INTO account (name, value) values (?, ?)", account.getName(), account.getValue());
 
+
+    }
+
+    @Override
+    public void updateAccount(AccountEntity account) {
+        template.update("UPDATE account SET name=?, value=?", account.getName(), account.getValue());
 
     }
 }

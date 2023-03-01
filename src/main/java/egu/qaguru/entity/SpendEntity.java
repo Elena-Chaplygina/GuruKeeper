@@ -5,9 +5,10 @@ import egu.qaguru.data.Category;
 public class SpendEntity {
 
     private int id;
-    private int account_id;
-    private Category spendcategory;
+    private int accountId;
+    private Category spendCategory;
     private int spend;
+    private String description;
 
     public int getId() {
         return id;
@@ -18,22 +19,22 @@ public class SpendEntity {
         return this;
     }
 
-    public int getAccount_id() {
-        return account_id;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public SpendEntity setAccount_id(int account_id) {
-        this.account_id = account_id;
+    public SpendEntity setAccountId(int accountId) {
+        this.accountId = accountId;
         return this;
 
     }
 
-    public Category getSpendcategory() {
-        return spendcategory;
+    public Category getSpendCategory() {
+        return spendCategory;
     }
 
-    public SpendEntity setSpendcategory(Category spendcategory) {
-        this.spendcategory = spendcategory;
+    public SpendEntity setSpendCategory(Category spendcategory) {
+        this.spendCategory = spendcategory;
         return this;
 
     }
@@ -46,5 +47,14 @@ public class SpendEntity {
         this.spend = spend;
         return this;
 
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public SpendEntity setDescription(String description) {
+        this.description = description;
+        return this;
     }
 }
