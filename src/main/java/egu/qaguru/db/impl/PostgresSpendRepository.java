@@ -27,7 +27,8 @@ public class PostgresSpendRepository implements SpendRepository {
         template.update("INSERT INTO spend (account_id, spend_category, spend, description) values (?, ?, ?,?)",
                 spend.getAccountId(),
                 spend.getSpendCategory().toString(),
-                spend.getSpend());
+                spend.getSpend(),
+                spend.getDescription());
 
 
     }
